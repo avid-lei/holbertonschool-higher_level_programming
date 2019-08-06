@@ -9,8 +9,13 @@
 int check_cycle(listint_t *list)
 {
 
+if (!list)
+	return (0);
+
 	listint_t *tor = list;
 	listint_t *har = list;
+
+
 
 
 while (tor->next && har->next->next)
