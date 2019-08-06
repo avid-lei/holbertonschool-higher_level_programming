@@ -15,10 +15,12 @@ int check_cycle(listint_t *list)
 
 while (tor->next && har->next->next)
 {
-	if (tor->next == har->next->next)
-		return (1);
 	tor = tor->next;
 	har = har->next->next;
+
+	if (tor == har)
+		return (1);
+
 }
 
 return (0);
