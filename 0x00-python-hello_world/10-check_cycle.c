@@ -13,7 +13,7 @@ int check_cycle(listint_t *list)
 	listint_t *har = list;
 
 
-while (tor && har)
+while (tor->next && har->next->next)
 {
 	if (tor->next == har->next->next)
 		return (1);
