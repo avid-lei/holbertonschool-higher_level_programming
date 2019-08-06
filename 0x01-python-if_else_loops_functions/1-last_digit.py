@@ -4,6 +4,7 @@ number = random.randint(-10000, 10000)
 if number < 0:
     pos = number * -1
     ld = pos % 10
+    ld = ld * -1
 else:
     ld = number % 10
 if ld > 5:
