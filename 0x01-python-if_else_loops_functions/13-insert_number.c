@@ -15,24 +15,30 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *checker = *head;
 	listint_t *node = malloc(sizeof(listint_t));
 
-	if (!head || !(*head))
+	if (!node)
 		return (NULL);
 
-
-	if (!node)
+	if (!head)
 		return (NULL);
 
 	node->n = number;
 	node->next = NULL;
 
-	while (checker->next->n < number)
+	if (!(*head))
+		return (node);
+
+	while (checker->next->n < number && checker->next->next)
 	{
 		checker = checker->next;
 	}
 
-	node->next = checker->next;
-	checker->next = node;
-
+	if (checker->next->next)
+	{
+		node->next = checker->next;
+		checker->next = node;
+	}
+	else
+		checker->next->next = node;
 
 	return (node);
 
