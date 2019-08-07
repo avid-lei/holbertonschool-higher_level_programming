@@ -25,8 +25,10 @@ listint_t *insert_node(listint_t **head, int number)
 	node->next = NULL;
 
 	if (!(*head))
-		return (node);
-
+	{
+		*head = node;
+		return (*head);
+	}
 	if (number < checker->n)
 	{
 		*head = node;
