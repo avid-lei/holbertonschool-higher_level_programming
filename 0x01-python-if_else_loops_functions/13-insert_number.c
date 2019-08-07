@@ -14,7 +14,6 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *checker = *head;
 	listint_t *node = malloc(sizeof(listint_t));
-	listint_t *temp;
 
 	if (!head || !(*head))
 		return (NULL);
