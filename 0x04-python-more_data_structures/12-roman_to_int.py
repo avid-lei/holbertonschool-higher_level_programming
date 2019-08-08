@@ -8,9 +8,11 @@ def convert(letter):
 
 def roman_to_int(roman_string):
 
-    if roman_string is None or roman_string == {}:
+    if roman_string is None:
         return 0
 
+    if not isinstance(roman_string, str):
+        return 0
     sum = 0
     prev = 0
     for idx in range(0, len(roman_string)):
