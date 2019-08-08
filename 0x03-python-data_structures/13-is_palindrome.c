@@ -13,16 +13,19 @@ int is_palindrome(listint_t **head)
 
 	int count;
 	listint_t *h = *head;
-
 	int *s;
 	int *beg;
 	int *end;
 	int x;
 	int y = 0;
 
+	if (!head)
+		return (0);
+	if (!(*head))
+		return (1);
+
 	for (count = 0; h; count++)
 		h = h->next;
-
 	s = malloc(sizeof(char) * count + 1);
 	if (!s)
 		return (0);
@@ -39,7 +42,6 @@ int is_palindrome(listint_t **head)
 	end--;
 	while (y < (count / 2))
 	{
-
 		if (*beg != *end)
 		{
 			return (0);
@@ -48,5 +50,4 @@ int is_palindrome(listint_t **head)
 		end--;
 		y++;
 	}
-	return (1);
-}
+	return (1); }
