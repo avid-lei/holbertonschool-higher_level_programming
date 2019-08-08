@@ -9,7 +9,7 @@ def convert(letter):
 def roman_to_int(roman_string):
 
     if roman_string is None or roman_string == {}:
-        return None
+        return 0
 
     sum = 0
     prev = 0
