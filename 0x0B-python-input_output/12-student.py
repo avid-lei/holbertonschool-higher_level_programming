@@ -24,7 +24,7 @@ class Student:
         retrieves dictionary rep of instance
         """
         obj = self.__dict__
-        if attrs:
-            return {x: obj[x] for x in obj if x in attrs}
-        else:
+        if attrs is None or attrs == []:
             return obj
+        else:
+            return {x: obj[x] for x in obj if x in attrs}
