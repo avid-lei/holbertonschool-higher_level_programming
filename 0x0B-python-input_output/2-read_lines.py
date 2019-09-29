@@ -10,7 +10,7 @@ prints to stdout
 def read_lines(filename="", nb_lines=0):
     with open(filename) as f:
         if nb_lines <= 0:
-            print(f.read())
+            print(f.read(), end="")
             return
         counter = 1
         for line in f:
