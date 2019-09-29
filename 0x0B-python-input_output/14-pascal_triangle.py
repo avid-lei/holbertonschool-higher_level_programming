@@ -8,6 +8,9 @@ return lists of lists of integers
 
 
 def pascal_triangle(n):
+    """
+    return list of lists of int
+    """
     tri = [[]]
     if n <= 0:
         return tri
