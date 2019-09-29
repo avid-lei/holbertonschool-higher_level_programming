@@ -7,7 +7,6 @@ public instance attributes
 """
 
 
-
 class Student:
     """
     public instances
