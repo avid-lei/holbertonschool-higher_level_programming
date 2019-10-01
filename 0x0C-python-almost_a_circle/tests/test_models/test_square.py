@@ -16,8 +16,7 @@ import unittest
 class TestSquare(unittest.TestCase):
 
     def test_square(self):
-        s1 = Square(5)
-        self.assertEqual(s1.id, 1)
+        s1 = Square(5, 0, 0, 1)
         self.assertEqual(s1.size, 5)
         self.assertEqual(s1.width, 5)
         self.assertEqual(s1.height, 5)
@@ -29,7 +28,7 @@ class TestSquare(unittest.TestCase):
         self.assertIsInstance(s1, Base)
         self.assertEqual(s1.__str__(), "[Square] (1) 0/0 - 5")
 
-        s2 = Square(2, 10)
+        s2 = Square(2, 10, 0, 2)
         self.assertEqual(s2.id, 2)
         self.assertEqual(s2.size, 2)
         self.assertEqual(s2.width, 2)
@@ -43,7 +42,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s2.__str__(), "[Square] (2) 10/0 - 2")
 
         s3 = Square(9, 15, 5, 20)
-        self.assertEqual(s3.id, 20)
         self.assertEqual(s3.size, 9)
         self.assertEqual(s3.width, 9)
         self.assertEqual(s3.height, 9)
@@ -71,7 +69,7 @@ class TestSquare(unittest.TestCase):
             s3.update(1, -10)
         self.assertEqual("width must be > 0", str(err.exception))
 
-        s4 = Square(5, 5, 1)
+        s4 = Square(5, 5, 1, 3)
         self.assertEqual(s4.__str__(), '[Square] (3) 5/1 - 5')
 
         s4.update(diva=20)
@@ -90,7 +88,7 @@ class TestSquare(unittest.TestCase):
             s4.update(size=-10)
         self.assertEqual("width must be > 0", str(err.exception))
 
-        s5 = Square(10, 2, 1)
+        s5 = Square(10, 2, 1, 4)
         new_dict = {'size': 10, 'id': 4, 'x': 2, 'y': 1}
         self.assertEqual(s5.to_dictionary(), new_dict)
         self.assertEqual(s5.__str__(), "[Square] (4) 2/1 - 10")
@@ -107,7 +105,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s6.__str__(), "[Square] (4) 2/1 - 10")
         self.assertFalse(s6 == s5)
 
-        s7 = Square(1)
+        s7 = Square(1, 0, 0, 6)
         new_dict2 = {'size': 1, 'id': 6, 'x': 0, 'y': 0}
         self.assertEqual(s7.to_dictionary(), new_dict2)
 
