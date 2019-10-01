@@ -13,8 +13,10 @@ import unittest
 
 
 class TestBase(unittest.TestCase):
+    """ class TestBase"""
 
     def test_base(self):
+        """tests for base"""
         b1 = Base()
         self.assertEqual(b1.id, 1)
         self.assertIsInstance(b1, Base)
