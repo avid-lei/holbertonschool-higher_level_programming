@@ -120,8 +120,8 @@ class TestBase(unittest.TestCase):
         self.assertEqual("argument must be a list of instances" +
                          " who inherits of Base", str(err.exception))
 
-        self.assertEqual(Rectangle.from_json_string(None), "[]")
-        self.assertEqual(Rectangle.from_json_string([]), "[]")
+        self.assertEqual(Rectangle.from_json_string(None), [])
+        self.assertEqual(Rectangle.from_json_string(""), [])
 
         l_1 = {'id': 89, 'width': 10, 'height': 4}
 
