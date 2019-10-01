@@ -63,8 +63,8 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
 
-# if not isinstance(dictionary, dict):
-#            raise TypeError("argument must be a dictionary")
+        if not isinstance(dictionary, dict):
+            raise TypeError("argument must be a dictionary")
 
         if cls.__name__ == "Rectangle":
             c = Rectangle(1, 1, 1, 1)
