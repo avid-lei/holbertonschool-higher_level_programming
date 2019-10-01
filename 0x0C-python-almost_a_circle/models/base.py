@@ -67,9 +67,9 @@ class Base:
             raise TypeError("argument must be a dictionary")
 
         if cls.__name__ == "Rectangle":
-            c = Rectangle(1, 1, 1, 1)
+            c = Rectangle(1, 1, 0, 0)
         elif cls.__name__ == "Square":
-            c = Square(1, 1, 1)
+            c = Square(1, 0, 0)
         c.update(**dictionary)
         return c
 
