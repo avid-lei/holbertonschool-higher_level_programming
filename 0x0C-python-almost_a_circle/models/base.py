@@ -51,7 +51,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """from json string to list"""
-        if json_string is None or json_string == []:
+        if json_string is None or json_string == "":
             return "[]"
         if not isinstance(json_string, str):
             raise TypeError("argument must be a JSON string")
