@@ -60,8 +60,8 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """create instance of all attributes set"""
-#        from models.rectangle import Rectangle
-#        from models.square import Square
+        from models.rectangle import Rectangle
+        from models.square import Square
 
         if not isinstance(dictionary, dict):
             raise TypeError("argument must be a dictionary")
