@@ -13,8 +13,9 @@ import unittest
 
 
 class TestRectangle(unittest.TestCase):
-
+    """Test Rectangle"""
     def test_rectangle(self):
+        """Tests for Rectangle class"""
         r1 = Rectangle(10, 2)
 #        self.assertEqual(r1.id, 1)
         self.assertEqual(r1.width, 10)

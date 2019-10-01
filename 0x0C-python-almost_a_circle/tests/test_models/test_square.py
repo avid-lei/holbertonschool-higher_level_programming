@@ -14,8 +14,9 @@ import unittest
 
 
 class TestSquare(unittest.TestCase):
-
+    """class TestSquare"""
     def test_square(self):
+        """tests for Square class"""
         s1 = Square(5, 0, 0, 1)
         self.assertEqual(s1.size, 5)
         self.assertEqual(s1.width, 5)
