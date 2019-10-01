@@ -52,7 +52,7 @@ class Base:
     def from_json_string(json_string):
         """from json string to list"""
         if json_string is None or json_string == "":
-            return "[]"
+            return []
         if not isinstance(json_string, str):
             raise TypeError("argument must be a JSON string")
         return (json.loads(json_string))
@@ -63,8 +63,8 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
 
-#        if not isinstance(dictionary, dict):
-#            raise TypeError("argument must be a dictionary")
+        if not isinstance(dictionary, dict):
+            raise TypeError("argument must be a dictionary")
 
         if cls.__name__ == "Rectangle":
             c = Rectangle(1, 1, 1, 1)
