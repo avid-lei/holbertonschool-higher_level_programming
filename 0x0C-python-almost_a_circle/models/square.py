@@ -4,6 +4,7 @@
 Square class
 """
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class Square(Rectangle):
