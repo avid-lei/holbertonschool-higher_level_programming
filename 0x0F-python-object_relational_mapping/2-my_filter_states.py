@@ -8,8 +8,8 @@ if __name__ == "__main__":
                           passwd=argv[2], db=argv[3])
     cur = con.cursor()
 
-    sql = "SELECT * FROM states WHERE name = '{}' ORDER BY id".format(argv[4])
-    cur.execute(sql)
+
+    cur.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id".format(argv[4]))
 
     rows = cur.fetchall()
 
