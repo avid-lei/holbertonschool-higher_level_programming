@@ -16,17 +16,12 @@ if __name__ == "__main__":
 
     session = Session()
 
-    flag = 0
-
     for state in session.query(State).order_by(State.id).all():
         if argv[4] == state.name:
             print(state.id)
             session.close()
             sys.exit()
 
-
-
     print("Not found")
-
 
     session.close()
