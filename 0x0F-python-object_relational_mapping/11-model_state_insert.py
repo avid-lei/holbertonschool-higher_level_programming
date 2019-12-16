@@ -19,11 +19,8 @@ if __name__ == "__main__":
     session = Session()
 
     new_obj = State(name='Louisiana')
-
     session.add(new_obj)
     session.commit()
-
-    session.refresh(new_obj)
     print (new_obj.id)
 
     session.close()
