@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Adds the new object
+"""
 
 if __name__ == "__main__":
     from model_state import Base, State
