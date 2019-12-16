@@ -18,8 +18,9 @@ if __name__ == "__main__":
 
     session = Session()
 
-    state = session.query(State).filter(State.id == 2).first()
-    state.name = 'New Mexico'
-    session.commit()
+    for state in session.query(State).all():
+        if 'N' in state.name:
+            session.delete(state)
+            session.commit()
 
     session.close()
