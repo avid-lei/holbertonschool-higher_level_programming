@@ -1,3 +1,3 @@
 #!/bin/bash
 #curl display status code
-curl -sI "$1" | awk '/HTTP/ {print $2}'
+curl -LI "$1" -o /dev/null -w '%{http_code}\n' -s
