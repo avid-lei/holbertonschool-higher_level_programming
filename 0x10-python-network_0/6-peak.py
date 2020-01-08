@@ -21,4 +21,4 @@ def peak_helper(li, start, end):
         else:
             return peak_helper(li, 0, m)
     else:
-        return peak_helper(li, m, end)
+        return peak_helper(li, m + 1, end)
