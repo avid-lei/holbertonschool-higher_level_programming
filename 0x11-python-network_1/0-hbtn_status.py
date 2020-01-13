@@ -6,6 +6,6 @@ if __name__ == '__main__':
     with urllib.request.urlopen('https://intranet.hbtn.io/status') as x:
         d = x.read()
         print('Body response:')
-        print(f'\t- type: {type(d)}')
-        print(f'\t- content: {d}')
-        print(f'\t- utf8 content: {d.decode("utf-8")}')
+        print('\t- type: ' + str(type(d)))
+        print('\t- content: ' + str(d))
+        print('\t- utf8 content: ' + d.decode("utf-8"))
