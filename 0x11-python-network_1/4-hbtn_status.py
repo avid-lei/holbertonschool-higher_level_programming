@@ -2,10 +2,9 @@
 """ fetch with request package """
 
 if __name__ == '__main__':
-    import urllib.request
+    import requests
 
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as x:
-        s = x.read().decode('utf-8')
-        print("Body response:")
-        print('\t- type: ' + str(type(s)))
-        print('\t- content: ' + s)
+    x = requests.get('https://intranet.hbtn.io/status')
+    print("Body response:")
+    print('\t- type: ' + str(type(x.text)))
+    print('\t- content: ' + x.text)
