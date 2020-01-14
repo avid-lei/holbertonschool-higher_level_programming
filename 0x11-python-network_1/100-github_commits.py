@@ -11,4 +11,4 @@ if __name__ == '__main__':
 
     for j in js:
         print("{}: {}".format
-             (x.get('sha'), x.get('commit').get('author').get('name')))
+             (j.get('sha'), j.get('commit').get('author').get('name')))
