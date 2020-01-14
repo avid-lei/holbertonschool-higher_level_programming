@@ -12,7 +12,8 @@ if __name__ == '__main__':
     counter = 0
 
     for x in j:
-        print("{}: {}".format(x.get('sha'), x.get('commit')['author']['name']))
+        print("{}: {}".format
+             (x.get('sha'), x.get('commit').get('author').get('name')))
         counter += 1
         if counter == 10:
             break
