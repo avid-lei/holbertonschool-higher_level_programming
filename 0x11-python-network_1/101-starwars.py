@@ -10,5 +10,14 @@ if __name__ == '__main__':
     j = x.json()
     print('Number of results: {}'.format(j['count']))
 
-    for i in j['results']:
-        print(i['name'])
+    total = j['count']
+    ctr = 0
+
+    while (ctr != total):
+        for i in j['results']:
+            print(i['name'])
+            ctr += 1
+        if ctr == total:
+            break
+        x = requests.get(j['next'])
+        j = x.json()
