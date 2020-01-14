@@ -8,7 +8,6 @@ if __name__ == '__main__':
                     (sys.argv[2], sys.argv[1]))
 
     js = x.json()[:10]
-
     for j in js:
-        print("{}: {}".format(j.get('sha'),
-                              j.get('commit').get('author').get('name')))
+        print('{}: {}'.format(j.get('sha'), j.get('commit')
+                              .get('author').get('name')))
