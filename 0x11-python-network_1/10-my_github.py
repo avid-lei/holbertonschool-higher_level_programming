@@ -11,4 +11,4 @@ if __name__ == '__main__':
 
     j = g.json()
 
-    print(j['id'])
+    print(j.get('id'))
