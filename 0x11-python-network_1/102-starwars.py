@@ -1,24 +1,24 @@
 #!/usr/bin/python3
-"""star wars API"""
+'''
+Star wars API
+'''
+
+import sys
+import requests
+
+URL = 'https://swapi.co/api/people'
 
 if __name__ == '__main__':
-    import requests
-    import sys
 
-    x = requests.get('https://swapi.co/api/people/',
-                     params={'search': sys.argv[1]})
-    j = x.json()
-    print('Number of results: {}'.format(j.get('count')))
-
-    while (j):
-        for i in j.get('results'):
-            print(i.get('name'))
-            for f in i.get('films'):
-                fg = requests.get(f)
-                print('\t' + fg.json().get('title'))
-
-        if j.get('next'):
-            x = requests.get(j.get('next'))
-            j = x.json()
+    params = {'search': sys.argv[1]}
+    people = requests.get(URL, params=params).json()
+    print('Number of results:', people.get('count'))
+    while people:
+        for person in people.get('results'):
+            print(person.get('name'))
+            for link in person.get('films'):
+                print('\t{}'.format(requests.get(link).json().get('title')))
+        if people.get('next'):
+            people = requests.get(people.get('next')).json()
         else:
-            j = None
+            people = None
