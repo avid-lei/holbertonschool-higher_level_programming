@@ -2,12 +2,13 @@
 """Github Api to list recent commits"""
 
 if __name__ == '__main__':
-    import requests
     import sys
-    x = requests.get('https://api.github.com/repos/{}/{}/commits'
-                     .format(sys.argv[2], sys.argv[1]))
+    import requests
+    x = requests.get('https://api.github.com/repos/{}/{}/commits'.format
+                    (sys.argv[2], sys.argv[1]))
 
     js = x.json()[:10]
+
     for j in js:
-        print('{}: {}'.format(j.get('sha'), j.get('commit')
-                              .get('author').get('name')))
+        print("{}: {}".format
+             (x.get('sha'), x.get('commit').get('author').get('name')))
