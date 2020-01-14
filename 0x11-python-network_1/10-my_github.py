@@ -1,9 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """github API"""
 
 if __name__ == '__main__':
     import requests
     import sys
+    from requests.auth import HTTPBasicAuth
 
     g = requests.get('https://api.github.com/user',
                      auth=(sys.argv[1], sys.argv[2]))
