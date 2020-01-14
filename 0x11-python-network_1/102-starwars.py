@@ -10,18 +10,15 @@ if __name__ == '__main__':
     j = x.json()
     print('Number of results: {}'.format(j.get('count')))
 
-    total = j.get('count')
-    ctr = 0
-
-    while (ctr != total):
+    while (j):
         for i in j.get('results'):
             print(i.get('name'))
-            ctr += 1
             for f in i.get('films'):
                 fg = requests.get(f)
                 print('\t' + fg.json().get('title'))
 
-        if ctr == total:
-            break
-        x = requests.get(j.get('next'))
-        j = x.json()
+        if j.get('next'):
+            x = requests.get(j.get('next'))
+            j = x.json()
+        else:
+            j = None
