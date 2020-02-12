@@ -9,13 +9,11 @@ request(url, function (err, response, body) {
     info = info.results;
     let i = 0;
     let count = 0;
-    while (i < info.length) {
-      let j = 0;
-      while (j < info[i].characters.length) {
-        if (info[i].characters[j].includes('/18/')) {
+    while (info[i]) {
+      for (let j = 0; info[i].characters[j]; j++) {
+        if (info[i].characters[j].indexOf('/18') > -1) {
           count++;
         }
-        j++;
       }
       i++;
     }
