@@ -12,7 +12,7 @@ request(url, function (err, response, body) {
     while (i < info.length) {
       let j = 0;
       while (j < info[i].characters.length) {
-        if (info[i].characters[j] === 'https://swapi.co/api/people/18/') {
+        if (info[i].characters[j].includes('/18/')) {
           count++;
         }
         j++;
