@@ -19,7 +19,9 @@ request(url, function (err, response, body) {
         }
         j++;
       }
+      if (count != 0) {
       emp[userId] = count;
+      }
       i = j;
     }
     console.log(emp);
