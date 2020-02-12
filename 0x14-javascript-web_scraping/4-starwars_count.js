@@ -9,9 +9,13 @@ request(url, function (err, response, body) {
     info = info.results;
     let i = 0;
     let count = 0;
-    while (info[i]) {
-      if (info[i].characters.indexOf('https://swapi.co/api/people/18/') > -1) {
-        count++;
+    while (i < info.length) {
+      let j = 0;
+      while (j < info[i].characters.length) {
+        if (info[i].characters[j] === 'https://swapi.co/api/people/18/') {
+          count++;
+        }
+        j++;
       }
       i++;
     }
